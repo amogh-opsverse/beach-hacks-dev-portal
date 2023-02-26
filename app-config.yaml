@@ -65,10 +65,47 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  providers: {}
+  environment: development
+  providers: 
+    github:
+      development:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+    google:
+      development:
+        clientId: ${AUTH_GOOGLE_CLIENT_ID}
+        clientSecret: ${AUTH_GOOGLE_CLIENT_SECRET}
 
 scaffolder:
+  defaultAuthor:
+    name: beach-hacks # Defaults to `Scaffolder`
+    email: amoghshiv99@gmail.com # Defaults to `scaffolder@backstage.io`
+  defaultCommitMessage: "first commit" # Defaults to 'Initial commit'
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
+
+# kubernetes:
+#   serviceLocatorMethod:
+#     type: 'multiTenant'
+#   clusterLocatorMethods:
+#     - type: 'config'
+#       clusters:
+#         - url: http://127.0.0.1:9999
+#           name: minikube
+#           authProvider: 'serviceAccount'
+#           skipTLSVerify: false
+#           skipMetricsLookup: true
+#           serviceAccountToken: ${K8S_MINIKUBE_TOKEN}
+#           dashboardUrl: http://127.0.0.1:64713 # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
+#           dashboardApp: standard
+#           caData: ${K8S_CONFIG_CA_DATA}
+#           caFile: '' # local path to CA file
+#           customResources:
+#             - group: 'argoproj.io'
+#               apiVersion: 'v1alpha1'
+#               plural: 'rollouts'
+#         - url: http://127.0.0.2:9999
+#           name: aws-cluster-1
+#           authProvider: 'aws'
 
 catalog:
   import:
@@ -77,28 +114,53 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location]
   locations:
+    # Uncomment these lines to add more example data
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
-      target: ../../examples/entities.yaml
+      target: ../../backstage-data/entities.yaml
 
-    # Local example template
+    # Local template
     - type: file
-      target: ../../examples/template/template.yaml
+      target: ../../backstage-data/nodejs-template/template.yaml
       rules:
         - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/react-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/angular-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/html-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/python-template/template.yaml
+      rules:
+        - allow: [Template]
+    # - type: file
+    #   target: ../../backstage-data/template/template.yaml
+    #   rules:
+    #     - allow: [Template]
 
     # Local example organizational data
     - type: file
-      target: ../../examples/org.yaml
+      target: ../../backstage-data/org.yaml
       rules:
         - allow: [User, Group]
 
-    ## Uncomment these lines to add more example data
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
 
-    ## Uncomment these lines to add an example org
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
-    #   rules:
-    #     - allow: [User, Group]
+    # Uncomment these lines to add an example org
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
+      rules:
+        - allow: [User, Group]

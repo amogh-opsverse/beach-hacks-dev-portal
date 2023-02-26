@@ -11,7 +11,9 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-website
+  name: website
+  annotations: 
+    github.com/project-slug: beachhacks-dev-portal/beach-hacks-github-actions
 spec:
   type: website
   lifecycle: experimental
