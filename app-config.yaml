@@ -1,5 +1,5 @@
 app:
-  title: Scaffolded Backstage App
+  title: Unified Dev Portal
   baseUrl: http://localhost:3000
 
 organization:
@@ -7,7 +7,7 @@ organization:
 
 stackoverflow:
   baseUrl: https://api.stackexchange.com/2.2
-  
+
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
   # See https://backstage.io/docs/tutorials/backend-to-backend-auth for
@@ -132,7 +132,7 @@ catalog:
         - allow: [Template]
     
     - type: file
-      target: ../../backstage-data/react-template/template.yaml
+      target: ../../backstage-data/create-react-app/template.yaml
       rules:
         - allow: [Template]
     
