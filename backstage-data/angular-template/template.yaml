@@ -7,6 +7,7 @@ metadata:
   description: A starter template for the scaffolder that creates a simple Angular app
   tags:
     - angular
+
 spec:
   owner: user:guest
   type: service

@@ -4,7 +4,11 @@ kind: Template
 metadata:
   name: python-template
   title: Python Template
+
   description: An example template for the scaffolder that creates a simple python app
+
+  description: An example template for the scaffolder that creates a simple React app
+
 spec:
   owner: user:guest
   type: service

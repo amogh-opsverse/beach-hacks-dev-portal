@@ -131,6 +131,7 @@ catalog:
       rules:
         - allow: [Template]
     
+
     - type: file
       target: ../../backstage-data/create-react-app/template.yaml
       rules:
@@ -150,6 +151,27 @@ catalog:
       target: ../../backstage-data/python-template/template.yaml
       rules:
         - allow: [Template]
+
+    - type: file
+      target: ../../backstage-data/react-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/angular-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/html-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/python-template/template.yaml
+      rules:
+        - allow: [Template]
+
     # - type: file
     #   target: ../../backstage-data/template/template.yaml
     #   rules:
