@@ -7,7 +7,6 @@ import {
   CATALOG_FILTER_EXISTS,
 } from '@backstage/plugin-catalog-react';
 import { TechDocsSearchResultListItem } from '@backstage/plugin-techdocs';
-
 import { SearchType } from '@backstage/plugin-search';
 import {
   SearchBar,
@@ -24,6 +23,7 @@ import {
   Page,
 } from '@backstage/core-components';
 import { useApi } from '@backstage/core-plugin-api';
+import { StackOverflowSearchResultListItem } from '@backstage/plugin-stack-overflow';
 
 const useStyles = makeStyles((theme: Theme) => ({
   bar: {
@@ -113,6 +113,9 @@ const SearchPage = () => {
             <SearchResult>
               <CatalogSearchResultListItem icon={<CatalogIcon />} />
               <TechDocsSearchResultListItem icon={<DocsIcon />} />
+              {/* <StackOverflowSearchResultListItem
+                result={document}
+              /> */}
             </SearchResult>
           </Grid>
         </Grid>

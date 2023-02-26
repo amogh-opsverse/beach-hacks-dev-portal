@@ -5,6 +5,9 @@ app:
 organization:
   name: My Company
 
+stackoverflow:
+  baseUrl: https://api.stackexchange.com/2.2
+  
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
   # See https://backstage.io/docs/tutorials/backend-to-backend-auth for
