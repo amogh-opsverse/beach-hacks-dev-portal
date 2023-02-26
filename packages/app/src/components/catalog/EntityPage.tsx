@@ -8,6 +8,12 @@ import {
   EntityProvidedApisCard,
   EntityProvidingComponentsCard,
 } from '@backstage/plugin-api-docs';
+import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
+import { GcpProjectsPage } from '@backstage/plugin-gcp-projects';
+// import {
+//   EntityGithubActionsContent,
+//   isGithubActionsAvailable,
+// } from '@backstage/plugin-github-actions';
 import {
   EntityAboutCard,
   EntityDependsOnComponentsCard,
@@ -53,6 +59,8 @@ import {
   RELATION_PROVIDES_API,
 } from '@backstage/catalog-model';
 
+import { EntityJiraOverviewCard, isJiraAvailable } from '@roadiehq/backstage-plugin-jira';
+
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 
@@ -63,6 +71,9 @@ const techdocsContent = (
     </TechDocsAddons>
   </EntityTechdocsContent>
 );
+
+// const serviceEntityPage = (
+// )
 
 const cicdContent = (
   // This is an example of how you can implement your company's logic in entity page.
@@ -140,6 +151,10 @@ const serviceEntityPage = (
       {cicdContent}
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+      <EntityGithubActionsContent />
+    </EntityLayout.Route>
+
     <EntityLayout.Route path="/api" title="API">
       <Grid container spacing={3} alignItems="stretch">
         <Grid item md={6}>
@@ -149,6 +164,14 @@ const serviceEntityPage = (
           <EntityConsumedApisCard />
         </Grid>
       </Grid>
+    </EntityLayout.Route>
+    
+    <EntityLayout.Route path="/kubernetes" title="Kubernetes">
+      <EntityKubernetesContent refreshIntervalMs={30000} />
+    </EntityLayout.Route>
+    
+    <EntityLayout.Route path="/gcp-projects" title="gcp-projects">
+      <GcpProjectsPage  />
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/dependencies" title="Dependencies">
@@ -189,6 +212,10 @@ const websiteEntityPage = (
       </Grid>
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+      <EntityGithubActionsContent />
+    </EntityLayout.Route>
+
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
@@ -219,7 +246,7 @@ const componentPage = (
     <EntitySwitch.Case if={isComponentType('service')}>
       {serviceEntityPage}
     </EntitySwitch.Case>
-
+    
     <EntitySwitch.Case if={isComponentType('website')}>
       {websiteEntityPage}
     </EntitySwitch.Case>

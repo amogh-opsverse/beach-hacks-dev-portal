@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | dump }}
+  github.com/project-slug: 'amogh-opsverse/beach-hacks-dev-portal'
+spec:
+  type: service
+  owner: user:guest
+  lifecycle: experimental

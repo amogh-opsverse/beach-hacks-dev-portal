@@ -2,12 +2,12 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: beach-hacks-dev-portal
-  description: An example of a Backstage application.
+  description: A Backstage application.
   # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  annotations:
+    github.com/project-slug: 'amogh-opsverse/beach-hacks-dev-portal'
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: john@example.com
+  owner: amoghshiv99@gmai.com
   lifecycle: experimental
