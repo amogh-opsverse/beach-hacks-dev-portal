@@ -6,7 +6,8 @@ organization:
   name: My Company
 
 stackoverflow:
-  baseUrl: https://api.stackexchange.com/2.2
+  #baseUrl: https://api.stackexchange.com/2.2
+  baseUrl: https://api.stackexchange.com/2.3
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -22,6 +23,12 @@ backend:
     # host: 127.0.0.1
   csp:
     connect-src: ["'self'", 'http:', 'https:']
+    img-src: 
+      # "'self'" and 'data' are from the backstage default but must be set since img-src is overriden
+      - "'self'"
+      - 'data:'
+      # Allow your Jira instance for @roadiehq/backstage-plugin-jira
+      - 'https://techwithandy.atlassian.net/jira/software/projects/UJ/boards/3'
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
     # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
@@ -49,6 +56,15 @@ integrations:
     #   token: ${GHE_TOKEN}
 
 proxy:
+  '/jira/api':
+    target: 'https://techwithandy.atlassian.net/jira/software/projects/UJ/'
+    headers:
+      Authorization:
+        $env: JIRA_TOKEN
+      Accept: 'application/json'
+      Content-Type: 'application/json'
+      X-Atlassian-Token: 'nocheck'
+      User-Agent: "MY-UA-STRING"
   ### Example for how to add a proxy endpoint for the frontend.
   ### A typical reason to do this is to handle HTTPS and CORS for internal services.
   # '/test':
@@ -118,8 +134,12 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     # Uncomment these lines to add more example data
+    #- type: url
+    #  target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+    
     - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+      target: https://github.com/beachhacks-dev-portal/udp-apis/blob/main/apis.yaml
+
 
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -142,12 +162,17 @@ catalog:
         - allow: [Template]
     
     - type: file
-      target: ../../backstage-data/html-template/template.yaml
+      target: ../../backstage-data/clean-architecture-app/template.yaml
       rules:
         - allow: [Template]
     
     - type: file
-      target: ../../backstage-data/python-template/template.yaml
+      target: ../../backstage-data/react-ssr-template/template.yaml
+      rules:
+        - allow: [Template]
+
+    - type: file
+      target: ../../backstage-data/pull-request/template.yaml
       rules:
         - allow: [Template]
     # - type: file

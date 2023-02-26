@@ -6,6 +6,7 @@ import MapIcon from '@material-ui/icons/MyLocation';
 import LibraryBooks from '@material-ui/icons/LibraryBooks';
 import CreateComponentIcon from '@material-ui/icons/AddCircleOutline';
 import CategoryIcon from '@material-ui/icons/Category';
+import BuildIcon from '@material-ui/icons/Build';
 import LogoFull from './LogoFull';
 import LogoIcon from './LogoIcon';
 import ApiIcon from '@material-ui/icons/Extension';
@@ -118,7 +119,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
           />
       </SidebarSubmenu>
         </SidebarItem>
-        
+        <SidebarItem icon={BuildIcon} to="toolbox" text="ToolBox" />
               
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
