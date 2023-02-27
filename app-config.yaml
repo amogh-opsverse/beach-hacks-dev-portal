@@ -134,8 +134,8 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     # Uncomment these lines to add more example data
-    #- type: url
-    #  target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
     
     - type: url
       target: https://github.com/beachhacks-dev-portal/udp-apis/blob/main/apis.yaml
