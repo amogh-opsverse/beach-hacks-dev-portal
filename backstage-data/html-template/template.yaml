@@ -7,7 +7,11 @@ metadata:
   description: An example template for the scaffolder that creates a simple React app
 spec:
   owner: user:guest
+<<<<<<< HEAD
   type: template
+=======
+  type: service
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
 
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.

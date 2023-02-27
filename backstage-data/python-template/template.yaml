@@ -4,7 +4,15 @@ kind: Template
 metadata:
   name: python-template
   title: Python Template
+<<<<<<< HEAD
   description: An example template for the scaffolder that creates a simple python app
+=======
+
+  description: An example template for the scaffolder that creates a simple python app
+
+  description: An example template for the scaffolder that creates a simple React app
+
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
 spec:
   owner: user:guest
   type: service

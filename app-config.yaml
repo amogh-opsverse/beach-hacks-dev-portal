@@ -6,8 +6,12 @@ organization:
   name: My Company
 
 stackoverflow:
+<<<<<<< HEAD
   #baseUrl: https://api.stackexchange.com/2.2
   baseUrl: https://api.stackexchange.com/2.3
+=======
+  baseUrl: https://api.stackexchange.com/2.2
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -134,12 +138,17 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     # Uncomment these lines to add more example data
+<<<<<<< HEAD
     #- type: url
     #  target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
     
     - type: url
       target: https://github.com/beachhacks-dev-portal/udp-apis/blob/main/apis.yaml
 
+=======
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
 
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
@@ -151,6 +160,10 @@ catalog:
       rules:
         - allow: [Template]
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
     - type: file
       target: ../../backstage-data/create-react-app/template.yaml
       rules:
@@ -162,19 +175,49 @@ catalog:
         - allow: [Template]
     
     - type: file
+<<<<<<< HEAD
       target: ../../backstage-data/clean-architecture-app/template.yaml
+=======
+      target: ../../backstage-data/html-template/template.yaml
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
       rules:
         - allow: [Template]
     
     - type: file
+<<<<<<< HEAD
       target: ../../backstage-data/react-ssr-template/template.yaml
+=======
+      target: ../../backstage-data/python-template/template.yaml
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
       rules:
         - allow: [Template]
 
     - type: file
+<<<<<<< HEAD
       target: ../../backstage-data/pull-request/template.yaml
       rules:
         - allow: [Template]
+=======
+      target: ../../backstage-data/react-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/angular-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/html-template/template.yaml
+      rules:
+        - allow: [Template]
+    
+    - type: file
+      target: ../../backstage-data/python-template/template.yaml
+      rules:
+        - allow: [Template]
+
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
     # - type: file
     #   target: ../../backstage-data/template/template.yaml
     #   rules:

@@ -3,7 +3,10 @@ import { Navigate, Route } from 'react-router-dom';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { SignInPage } from '@backstage/core-components';
+<<<<<<< HEAD
 import { ToolboxPage } from '@drodil/backstage-plugin-toolbox';
+=======
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
 import {
   CatalogEntityPage,
   CatalogIndexPage,

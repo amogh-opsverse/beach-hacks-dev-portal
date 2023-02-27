@@ -6,7 +6,10 @@ import MapIcon from '@material-ui/icons/MyLocation';
 import LibraryBooks from '@material-ui/icons/LibraryBooks';
 import CreateComponentIcon from '@material-ui/icons/AddCircleOutline';
 import CategoryIcon from '@material-ui/icons/Category';
+<<<<<<< HEAD
 import BuildIcon from '@material-ui/icons/Build';
+=======
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
 import LogoFull from './LogoFull';
 import LogoIcon from './LogoIcon';
 import ApiIcon from '@material-ui/icons/Extension';
@@ -79,6 +82,12 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         {/* Global nav, not org-specific */}
         {/* <SidebarItem icon={HomeIcon} to="catalog" text="Home"> */}
         <SidebarItem icon={HomeIcon} to="/" text="Home" >
+<<<<<<< HEAD
+=======
+
+        <SidebarItem icon={HomeIcon} to="catalog" text="Home">
+
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
         <SidebarSubmenu title="Catalog">
           <SidebarSubmenuItem
             title="Domains"
@@ -119,7 +128,11 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
           />
       </SidebarSubmenu>
         </SidebarItem>
+<<<<<<< HEAD
         <SidebarItem icon={BuildIcon} to="toolbox" text="ToolBox" />
+=======
+        
+>>>>>>> 5607f66ff8878b777617f59a4a0444f7545c2222
               
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
